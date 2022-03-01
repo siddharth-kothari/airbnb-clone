@@ -3,7 +3,7 @@ import Image from "next/image"
 
 function BottomBaner({ img, title, buttonText }) {
   return (
-    <section className="relative">
+    <section className="relative mb-20">
       <div className="relative h-[500px] min-w-300">
         <Image
           src={img}
@@ -16,7 +16,6 @@ function BottomBaner({ img, title, buttonText }) {
 
       <div className="absolute top-10 left-10">
         <h1 className="text-4xl w-64 mb-3 font-semibold text-white">{title}</h1>
-       
       </div>
 
       <div className="absolute bottom-10 left-10">

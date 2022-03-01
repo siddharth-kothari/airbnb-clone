@@ -4,6 +4,7 @@ import Baner from '../components/Baner'
 import BottomBaner from '../components/BottomBaner';
 import Category from '../components/Category';
 import ExploreNearbuy from '../components/ExploreNearbuy';
+import Footer from '../components/Footer';
 import Header from '../components/Header'
 
 
@@ -55,6 +56,7 @@ export default function Home({ exploreData, cardData }) {
           buttonText='Ask a Superhost'
         />
       </main>
+      <Footer />
     </div>
   )
 }
