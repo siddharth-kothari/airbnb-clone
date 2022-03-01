@@ -1,11 +1,13 @@
 /* eslint-disable react/jsx-key */
 import Head from 'next/head'
 import Baner from '../components/Baner'
+import Category from '../components/Category';
 import ExploreNearbuy from '../components/ExploreNearbuy';
 import Header from '../components/Header'
 
 
-export default function Home({  exploreData }) {
+
+export default function Home({ exploreData, cardData }) {
   return (
     <div className=''>
       <Head>
@@ -18,22 +20,35 @@ export default function Home({  exploreData }) {
       </div>
 
       <main className='max-w-7xl mx-auto px-8 sm:px-16 '>
-          <section className='pt-6'>
-            <h2 className='text-4xl text-semibold pb-5'>Explore Nearbuy</h2>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-              {exploreData?.map(item => (
+        <section className='pt-6'>
+          <h2 className='text-4xl text-semibold pb-5'>Explore Nearbuy</h2>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+            {exploreData?.map(item => (
               <ExploreNearbuy
                 key={item.img}
                 img={item.img}
                 distance={item.distance}
-                location={item.location }
+                location={item.location}
               />
 
             ))}
-            </div>
-            
-          </section>
-        </main>
+          </div>
+        </section>
+
+        <section>
+          <h2 className='text-4xl text-semibold pb-5 py-8'>Live Anywhere</h2>
+          <div className='flex space-x-6 overflow-scroll scrollbar-hide p-4'>
+            {cardData.map(item => ( 
+              <Category
+                key={item.img}
+                img={item.img}
+                title={item.title}
+              />
+            ))}
+          </div>
+
+        </section>
+      </main>
     </div>
   )
 }
@@ -43,9 +58,14 @@ export async function getStaticProps() {
     res => res.json()
   );
 
-  return{
-    props:{
-      exploreData 
-    }
-  }
+  const cardData = await fetch('https://links.papareact.com/zp1').then(
+    res => res.json()
+  );
+
+  return {
+    props: {
+      exploreData,
+      cardData,
+    },
+  };
 }
