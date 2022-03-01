@@ -10,7 +10,7 @@ import {
 function Header() {
     return (
         <header className="sticky top-0 z-50 grid grid-cols-3 bg-black shadow-md p-5 md:px-10">
-            <div className="relative hidden md:flex flex items-center h-12 
+            <div className="relative flex items-center h-12 
             cursor-pointer">
                 <Image
                     src='/airbnb-logo.png'
@@ -28,7 +28,7 @@ function Header() {
                 p-2 cursor-pointer md:mx-2"/>
             </div>
 
-            <div className="hidden md:flex flex space-x-4 items-center justify-end text-white">
+            <div className=" flex space-x-4 items-center justify-end text-white">
                 <p className="hidden md:inline cursor-pointer">Become a host</p>
                 <GlobeAltIcon className="h-6"/>
                 <div className="flex items-start space-x-2 border-2 p-2 rounded-full bg-white text-gray-600">
