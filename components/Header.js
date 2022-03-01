@@ -10,10 +10,10 @@ import {
 function Header() {
     return (
         <header className="sticky top-0 z-50 grid grid-cols-3 bg-black shadow-md p-5 md:px-10">
-            <div className="relative flex items-center h-10 
+            <div className="relative flex items-center h-12 
             cursor-pointer">
                 <Image
-                    src='https://links.papareact.com/qd3'
+                    src='/airbnb-logo.png'
                     alt="airbnb logo"
                     layout="fill"
                     objectFit="contain"

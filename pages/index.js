@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-key */
 import Head from 'next/head'
 import Baner from '../components/Baner'
+import BottomBaner from '../components/BottomBaner';
 import Category from '../components/Category';
 import ExploreNearbuy from '../components/ExploreNearbuy';
 import Header from '../components/Header'
@@ -46,8 +47,13 @@ export default function Home({ exploreData, cardData }) {
               />
             ))}
           </div>
-
         </section>
+
+        <BottomBaner 
+          img='/bottombaner.webp'
+          title='Questions about hosting?'
+          buttonText='Ask a Superhost'
+        />
       </main>
     </div>
   )
