@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-key */
+
 import Head from 'next/head'
 import Baner from '../components/Baner'
 import BottomBaner from '../components/BottomBaner';
@@ -14,7 +14,7 @@ export default function Home({ exploreData, cardData }) {
     <div className=''>
       <Head>
         <title>Airbnb</title>
-        <link rel="icon" href="/airbnb.png" />
+        <link rel="icon" href="/airbnb.ico" />
       </Head>
       <div className='bg-black pb-20'>
         <Header />
