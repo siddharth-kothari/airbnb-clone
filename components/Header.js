@@ -21,7 +21,7 @@ function Header() {
                 />
             </div>
 
-            <div className="flex  md:border-2 rounded-full py-2 md:shadow-sm bg-white">
+            <div className="flex  md:border-2 rounded-full py-4 md:py-2 md:shadow-sm bg-white ">
                 <input type="text" placeholder="Where are you going ?" className="pl-5 bg-transparent 
                 outline-none flex-grow text-sm  text-white placeholder-gray-400 placeholder:text-center md:placeholder:text-left"/>
                 <SearchIcon className="hidden md:inline-flex h-8 bg-red-400 text-white rounded-full 
