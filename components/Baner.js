@@ -14,8 +14,8 @@ function Baner() {
             className=" xl:rounded-3xl"
        /> 
        <div className="absolute top-3/4 w-full text-center text-white">
-           <p className=" text-center text-3xl sm:text-2xl">Not sure where to go? Perfect.</p>
-           <button className="text-purple-900 bg-white px-6 py-3 shadow-md 
+           <p className=" text-center text-4xl">Not sure where to go? Perfect.</p>
+           <button className="text-purple-900 bg-white px-6 py-4 mt-[20px] shadow-md 
            rounded-full font-bold my-3 hover:shadow-xl active:scale-90 transition duration-150">I'm flexible</button>
        </div>
     </div>

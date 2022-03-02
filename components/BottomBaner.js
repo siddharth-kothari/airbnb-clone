@@ -3,7 +3,7 @@ import Image from "next/image"
 
 function BottomBaner({ img, title, buttonText }) {
   return (
-    <section className="relative mb-20">
+    <section className="relative mt-10 mb-20 ">
       <div className="relative h-[500px] min-w-300">
         <Image
           src={img}
