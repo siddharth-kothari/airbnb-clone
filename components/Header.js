@@ -10,6 +10,7 @@ import { useState } from "react"
 import "react-date-range/dist/theme/default.css"
 import "react-date-range/dist/styles.css"
 import { DateRangePicker } from "react-date-range"
+import { useRouter } from "next/router"
 
 
 function Header() {
@@ -17,6 +18,7 @@ function Header() {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [noOfguests, setNoOfGuests] = useState(1);
+    const router = useRouter();
 
     const selectionRange = {
         startDate: startDate,
@@ -33,9 +35,21 @@ function Header() {
         setSearchInput("");
     }
 
+    const search = () =>{
+        router.push({
+            pathname: "/search",
+            query:{
+                location: searchInput,
+                startDate: startDate.toISOString(),
+                endDate: endDate.toISOString(),
+                noOfguests,
+            }
+        });
+    }
+
     return (
         <header className="sticky top-0 z-50 grid grid-cols-2 md:grid-cols-3 bg-black shadow-md p-5 md:px-10">
-            <div className="relative hidden md:flex items-center h-12 
+            <div onClick={() => router.push("/")} className="relative hidden md:flex items-center h-12 
             cursor-pointer">
                 <Image
                     src='/airbnb-logo.png'
@@ -87,8 +101,8 @@ function Header() {
                     </div>
 
                     <div className="flex flex-grow">
-                        <button onClick={ resetInput} className="flex-grow text-white">Cancel</button>
-                        <button className="flex-grow text-red-400">Search</button>
+                        <button onClick={resetInput} className="flex-grow text-white">Cancel</button>
+                        <button onClick={search} className="flex-grow text-red-400">Search</button>
                     </div>
                 </div>
             )}
