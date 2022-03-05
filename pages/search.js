@@ -8,8 +8,8 @@ function Search() {
 
   const router = useRouter();
   const { location, startDate, endDate, noOfguests } = router.query;
-  const formattedStartDate = format(new Date(startDate), "dd MMM")
-  const formattedEndDate = format(new Date(endDate), "dd MMM")
+  const formattedStartDate = format(new Date(startDate), "dd MMMM yy");
+  const formattedEndDate = format(new Date(endDate), "dd MMMM yy");
   const range = `${formattedStartDate} - ${formattedEndDate}`
 
   return (
@@ -18,7 +18,7 @@ function Search() {
         <title>Airbnb</title>
         <link rel="icon" href="/airbnb.ico" />
       </Head>
-      <Header />
+      <Header placeholder={`${location} | ${range} | ${noOfguests} guests`}/>
       <main className='flex'>
         <section className='flex-grow pt-14 px-6'>
           <p className='text-xs'>300+ stays  - {range} - for {noOfguests} guests.</p>
