@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header'
 import format from 'date-fns/format';
 import InfoCard from '../components/InfoCard';
+import MapBox from '../components/MapBox';
 
 function Search({ searchResults }) {
 
@@ -47,10 +48,13 @@ function Search({ searchResults }) {
               />
             ))}
           </div>
-
         </section>
 
+        <section className='hidden xl:inline-flex xl:min-w-[600]'>
+          <MapBox searchResults={searchResults}/>
+        </section>
       </main>
+
       <Footer />
 
     </div>
