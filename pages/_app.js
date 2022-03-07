@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/globals.css' 
 import ProgressBar from '@badrap/bar-of-progress'
 
 import Router from 'next/router'
@@ -11,6 +11,9 @@ const progress = new ProgressBar({
 })
 
 Router.events.on('routeChangeStart', progress.start)
+Router.events.on('routeChangeComplete', progress.finish)
+Router.events.on('routeChangeError', progress.start)
+
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
